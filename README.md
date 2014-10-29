@@ -1,7 +1,11 @@
 Grupo_IS
 ========
 
-#Hola cachondas!
-Todo bien?
+#Hola chavales!
+Dejemoslo más profesional, sin blasfemar..
 
 #NARANJITO
+##Objetivos:
+	-(Completar)
+	-(Completar)
+	-(Completar)
