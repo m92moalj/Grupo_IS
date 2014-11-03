@@ -1,31 +1,12 @@
 Grupo_IS
 ========
 
+#README de Ingenieria del Software
 
-#Hola chavales!
+##Hola chavales!
 Dejemoslo más profesional, sin blasfemar..
-=======
 
-#Comentario añadido por i32marej
-
-:D
-
-=======
-#Comentario de Edu
-
-Este es un comentario de Edu.
-
-=======
-#Hola cachondas!
-Todo bien?
-
-
-=======
-Esto sale o no sale?
-=======
-
-=======
-#NARANJITO
+##NARANJITO
 
 ##Objetivos:
 	-(Completar)
