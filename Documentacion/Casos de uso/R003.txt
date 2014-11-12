@@ -1,0 +1,20 @@
+Caso de uso: Modificar un cliente.
+ID: R003_MODIFICAR.
+Actor principal: Administrador de sistema.
+Actores de soporte: No existe.
+Nivel: General.
+Ámbito: Oficina dentista.
+Precondiciones:
+	-Debe haber mínimo un cliente en el fichero de la base de datos.
+Escenario principal de éxito:
+	1) El administrador seleccionará la opción de modificar un cliente desde el menú del programa.
+	2) El programa pedirá al administrador el DNI del cliente. Al insertar el DNI, el programa buscará si coincide con otro ya existente.
+	3) El programa llama a R007_VISUALIZAR y R004_BORRAR, y pide los datos del cliente.
+	4) El administrador introducirá los nuevos datos del cliente.
+	5) El programa irá escribiendo en el fichero los datos que el administrador introduzca.
+	6) El programa llamará a R005_ORDENAR para ordenar el fichero.
+Escenarios alternativos:
+	2a) En caso de que no coincida el DNI con uno ya existente, se imprimirá un mensaje por pantalla avisando al administrador que ese cliente no existe.
+	2b) Se preguntará al administrador si desea insertar un nuevo cliente. En caso de que la respuesta sea afirmativa llamaremos a R002_INSERTAR.
+Postcondiciones:
+	-Se modifica el fichero de la base de datos introduciendo una modificación de un cliente ya existente o la inserción de un cliente nuevo.
