@@ -1,0 +1,96 @@
+/*  PRACTICA 2. 4.5 Ejercicio 5.
+Implemente un programa que cuente las líneas de los ficheros de texto que se le pasen como parámetros y al final muestre también el número de líneas totales (contando las de todos los ficheros juntos). Ejemplo de llamada: ./a.out fichero1 fichero2 fichero3 Debe crear un hilo por fichero obtenido por linea de argumentos, de forma que todos los ficheros se cuenten de manera paralela
+*/
+
+///MAIN
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <string.h>
+#include "funciones.h"
+
+int contador = 0;
+
+main(int argc, char* argv[]){
+
+if(argc < 2){
+	printf("\nDisculpe, debe introducir mínimo un fichero, tal que así:\n\t./main file1.txt file2.txt ... fileN.txt\n");
+	exit(EXIT_FAILURE);
+	}
+
+FILE** file = malloc(sizeof(argc));
+pthread_t* tid = malloc(sizeof(argc));
+int i = 1, j = 0, suma = 0;
+void* cont;
+
+
+for(i = 0, j = 0; i < argc-1; i++){
+	
+		if((file[j] = fopen(argv[i+1], "r"))==NULL){
+			printf("\nFichero %d no encontrado.\n", i);
+			}
+		
+		else{
+			printf("\nFichero %d ENCONTRADO.\n", i);
+			pthread_create(&tid[j], NULL, (void*)contarlineas, file[j]);
+			j++;
+		}
+	}
+
+for(i = 0; i < j; i++){	
+	pthread_join(tid[i], &cont);
+	suma = *(int*)cont + suma;	
+	}
+
+printf("\nSuma de todas las lineas de los ficheros abiertos: %d\n", suma);
+
+
+free(file);
+free(tid);
+}
+
+
+///FUNCIONES.C
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <pthread.h>
+#include <string.h>
+#include "funciones.h"
+
+void* contarlineas(void* fichero){
+
+	FILE* aux = (FILE*)fichero;
+	char str[100];
+	int* cont = (int*)malloc(sizeof(int));
+
+	while(!feof(aux))
+	{
+		if((fgets(str, 100, aux))!=NULL){
+			*cont = *cont + 1;
+			}
+	}
+
+	printf("\nSuma de lineas parcial: %d\n", *cont);
+	pthread_exit((void*)cont);
+}
+
+
+///FUNCIONES.H
+
+#ifndef FUNCIONES_H
+#define FUNCIONES_H
+
+	void* contarlineas(void* fichero);
+#endif
+
+
+///MAKEFILE
+
+main: main.o funciones.o funciones.h
+	gcc main.c funciones.c -o main -lpthread -g
+main.o: main.c
+	gcc -c main.c
+funciones.o: funciones.c
+	gcc -c funciones.c

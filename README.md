@@ -1,12 +1,12 @@
 Grupo_IS
 ========
 
-#README de Ingenieria del Software
+#README de Ingeniería del Software
 
 ##Hola chavales!
 Dejemoslo más profesional, sin blasfemar..
 
-##NARANJITO
+##OranGITop
 
 ##Objetivos:
 	-(Completar)

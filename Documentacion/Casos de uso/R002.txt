@@ -1,0 +1,19 @@
+Caso de uso: Insertar un cliente en el fichero y ordenarlo posteriormente.
+ID: R002_INSERTAR.
+Actor principal: Administrador de sistema.
+Actores de soporte: No existe.
+Nivel: General.
+Ámbito: Oficina dentista.
+Precondiciones:
+	-No existe.
+Escenario principal de éxito:
+	1) El administrador seleccionará la opción de insertar un cliente desde el menú del programa.
+	2) El programa pedirá al administrador los datos del cliente.
+	3) El administrador del sistema introducirá los datos del cliente. Al insertar el DNI, el programa buscará si coincide con otro ya existente.
+	4) El programa irá escribiendo en el fichero los datos que el administrador introduzca.
+	5) El programa llamará a R005_ORDENAR para ordenar el fichero.
+Escenarios alternativos:
+	2a) En caso de que coincida el DNI con uno ya existente, se imprimirá un mensaje por pantalla avisando al administrador que ese cliente ya existe.
+	2b) Se llamará a R007_VISUALIZAR y se preguntará al administrador si quiere modificarlo. Entonces llamar a R003_MODIFICAR.
+Postcondiciones:
+	-Se modifica el fichero de la base de datos introduciendo un cliente nuevo.

@@ -1,0 +1,19 @@
+Caso de uso: Buscar por apellido un cliente.
+ID: R001_BUSCAR
+Actor principal: Administrador de sistema.
+Actores de soporte: No existe.
+Nivel: General.
+Ámbito: Oficina dentista.
+Precondiciones:
+	-Debe haber mínimo un cliente en el fichero de la base de datos.
+Escenario principal de éxito:
+	1) El administrador seleccionará la opción de buscar por apellido desde el menú del programa.
+	2) El administrador del sistema escribe un apellido en el buscador del programa.
+	3) El programa busca en el fichero de clientes los resultados que coincidan.
+	4) Si hay coincidencia, mostrará todos los clientes con ese apellido enumerados. Preguntará qué número de la lista queremos seleccionar.
+	5) Una vez seleccionado el cliente a visualizar, se llamará R007_VISUALIZAR.
+	6) Incrementar el campo de número de veces que se ha visitado
+Escenarios alternativos:
+	3a) Si no se dan coincidencias se avisa al administrador y proporciona la opción R002_INSERTAR.
+Postcondición:
+	-El fichero de la base de datos habrá cambiado reflejando el punto 6.

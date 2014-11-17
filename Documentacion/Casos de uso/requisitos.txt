@@ -1,0 +1,96 @@
+
+
+╭━━━╮           ╭━━━╮╭━━╮╭━━━━╮
+┃╭━╮┃           ┃╭━╮┃╰┫┣╯┃╭╮╭╮┃
+┃┃ ┃┃╭━╮╭━━╮╭━━╮┃┃ ╰╯ ┃┃ ╰╯┃┃╰╯╭━━╮╭━━╮
+┃┃ ┃┃┃╭╯┃╭╮┃┃╭╮┃┃┃╭━╮ ┃┃   ┃┃  ┃╭╮┃┃╭╮┃
+┃╰━╯┃┃┃ ┃╭╮┃┃┃┃┃┃╰┻━┃╭┫┣╮  ┃┃  ┃╰╯┃┃╰╯┃
+╰━━━╯╰╯ ╰╯╰╯╰╯╰╯╰━━━╯╰━━╯  ╰╯  ╰━━╯┃╭━╯
+                                   ┃┃
+                                   ╰╯
+
+
+
+
+
+
+1º) Cuántos clientes. 200 pacientes. #define pacientes 200
+2º) Tiempo de respuesta. Segundos.
+3º) Qué datos quiere exactamente almacenar. {Nombre, apellidos, DNI, teléfonos__, dirección, CP, emails__, nota, redes sociales__(nombre,url/usuario)}
+4º) Interfaz. Texto terminal.
+5º) Seguridad. Delegada en S.O.
+6º) ¿Puede el cliente modificar los datos? (Insertar, modificar, borrar)
+
+
+{COSAS DE LA AGENDA}
+	-Nombre.
+	-Apellidos.
+	-Número de teléfono.
+	-DNI.
+							-Cita.NO
+							-Obser.SI
+
+REQUISITOS FUNCIONALES:
+	-DNI único.
+	-No podrá haber más de un DNI igual.
+	-Los DNI no podrán repetirse.
+	-Cada DEENEI debe ser distinto.
+
+
+/*
+
+Función buscar por apellido.
+Copia seguridad agenda. (Cada cuanto tiempo. En el menú del programa viene hacer y cargar)
+Imprimir agenda ordenada por orden alfabético. (Función ordenar)
+Ver contactos favoritos.
+Ver contactos frecuentes.
+
+*/
+
+Lo más importante: buscar por apellido.
+
+
+
+
+
+//////////////////////////////////////////////////////////////
+PARTES INTERESADAS:
+
+Dentista
+Pacientes
+Administrativo/a (será el actor principal)
+
+FUNCIONALES:
+
+- Una agenda como la del teléfono inteligente
+- Buscar
+- Ordenación
+- Insertar-Modificar-Borrar
+- Sin login para acceder (no es un requisito)
+- Copias de seguridad manuales a un fichero local
+- Interfaz de texto por consola
+- Almacenar información del paciente: DNI, nombre y apellidos, teléfonos, correos electrónicos, dirección(nes) postales, anotaciones, favorito, más usados, redes sociales (nombre + URL ó usuario)
+- Imprimir la agenda de forma bonita en texto plano o HTML opcionalmente
+
+NO FUNCIONALES:
+
+- Escrito en C++
+- Se ejecuta en un ordenador con Linux
+- Nivel de seguridad cero
+- Integridad de datos: copias de seguridad manuales
+- Volumen de datos 200 entradas
+- El almacenamiento es texto plano/binario
+
+PRIORIDADES:
+
+Como cliente me interesa que funcione lo primero la funcionalidad de búsqueda por apellido, para sustituir mi agenda de papel. Nota: ten en cuenta que esta preferencia tendrá dependencias. 
+//////////////////////////////////////////////////////////////
+
+
+R001_BUSCAR El <sistema> deberá <permitir buscar por apellido>
+R002_INSERTAR El <sistema> deberá <permitir insertar la ficha de un cliente>
+R003_MODIFICAR El <sistema> deberá <permitir modificar la ficha de un cliente>
+R004_BORRAR El <sistema> deberá <permitir borrar una ficha de un cliente>
+R005_ORDENAR El <sistema> deberá <permitir ordenar la agenda de clientes por apellidos>
+R006_SECCOPYPRINT El <sistema> deberá <permitir hacer una copia de seguridad con una opción en la interfaz, se podrá utilizar como agenda impresa>
+R007_VISUALIZAR El <sistema> deberá <permitir visualizar la ficha de un cliente>
