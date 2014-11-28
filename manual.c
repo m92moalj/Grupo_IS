@@ -175,3 +175,24 @@ To https://github.com/m92moalj/practicas-is.git
  * [new branch]      testing -> testing
 
 
+
+//VER TODAS LAS RAMAS Y ENTRAR A UNA DISTINTA A LA MASTER
+i32ropie@i32ropie~/Grupo_IS $ git branch -a //Vemos todas las ramas
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/POO_P2
+  remotes/origin/auxiliar
+  remotes/origin/master
+
+i32ropie@i32ropie~/Grupo_IS $ git checkout POO_P2 //Nos descargamos POO_P2 (por ejemplo)
+Branch POO_P2 set up to track remote branch POO_P2 from origin.
+Switched to a new branch 'POO_P2'
+
+i32ropie@i32ropie~/Grupo_IS $ ls //Vemos contenido y comprobamos que nos cambiamos bien de rama.
+holamundo.c  LICENSE  manual.c  POO_P2.tar.gz  R001.txt  R002.txt  R003.txt  README.md  requisitos.txt
+
+i32ropie@i32ropie~/Grupo_IS $ git checkout master //Volvemos a master.
+Switched to branch 'master'
+
+i32ropie@i32ropie~/Grupo_IS $ ls //Y vemos que el contenido de ahora es el de master.
+Desktop.rar  Documentacion/  holamundo.c  LICENSE  manual.c  R001.txt  R002.txt  R003.txt  README.md  requisitos.txt  SO
