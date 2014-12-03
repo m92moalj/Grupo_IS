@@ -5,13 +5,65 @@
  *      Author: i32ropie
  */
 
+#include <string>
+
 #include "Paciente.h"
+
+using namespace std;
 
 namespace dentista {
 
 Paciente::Paciente() {
 	// TODO Auto-generated constructor stub
 
+}
+
+const std::string& Paciente::getApellidos() const {
+	return apellidos_;
+}
+
+void Paciente::setApellidos(const std::string& apellidos) {
+	apellidos_ = apellidos;
+}
+
+const Direccion& Paciente::getDireccion() const {
+	return direccion_;
+}
+
+void Paciente::setDireccion(const Direccion& direccion) {
+	direccion_ = direccion;
+}
+
+const std::string& Paciente::getDni() const {
+	return dni_;
+}
+
+void Paciente::setDni(const std::string& dni) {
+	dni_ = dni;
+}
+
+const std::string& Paciente::getNombre() const {
+	return nombre_;
+}
+
+void Paciente::setNombre(const std::string& nombre) {
+	nombre_ = nombre;
+}
+
+const RedSocial& Paciente::getRedSocial() const {
+	return redSocial_;
+}
+
+void Paciente::setRedSocial(const RedSocial& redSocial) {
+	redSocial_ = redSocial;
+}
+
+const std::string& Paciente::getTelefono() const {
+	return telefono_;
+}
+
+void Paciente::setTelefono(const std::string& telefono) {
+	telefono_ = telefono;
 }
 
 Paciente::~Paciente() {
