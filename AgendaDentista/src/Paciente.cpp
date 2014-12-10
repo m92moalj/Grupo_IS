@@ -15,7 +15,8 @@ namespace dentista {
 
 Paciente::Paciente() {
 	// TODO Auto-generated constructor stub
-
+favorito_=false;
+frecuencia=0;
 }
 
 const std::string& Paciente::getApellidos() const {
