@@ -62,6 +62,30 @@ const std::string& Paciente::getTelefono() const {
 	return telefono_;
 }
 
+const std::string& Paciente::getNotas() const {
+	return notas_;
+}
+
+int Paciente::getFrecuencia() const {
+	return frecuencia;
+}
+
+bool Paciente::isFavorito() const {
+	return favorito_;
+}
+
+void Paciente::setFavorito(bool favorito) {
+	favorito_ = favorito;
+}
+
+void Paciente::setFrecuencia(int frecuencia) {
+	this->frecuencia = frecuencia;
+}
+
+void Paciente::setNotas(const std::string& notas) {
+	notas_ = notas;
+}
+
 void Paciente::setTelefono(const std::string& telefono) {
 	telefono_ = telefono;
 }
