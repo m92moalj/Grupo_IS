@@ -17,8 +17,3 @@ Interfaz::Interfaz() {
 Interfaz::~Interfaz() {
 	// TODO Auto-generated destructor stub
 }
-
-void virtual Interfaz::insertarPaciente(Paciente p)
-{
-
-}

@@ -16,7 +16,6 @@ class Interfaz: public Agenda {
 public:
 	Interfaz();
 	virtual ~Interfaz();
-	void virtual insertarPaciente(Paciente p);
 private:
 
 };
