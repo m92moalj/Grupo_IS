@@ -1,13 +1,13 @@
 /*
  * Interfaz.cpp
  *
- *  Created on: 03/12/2014
+ *  Created on: 09/12/2014
  *      Author: i32ropie
  */
 
 #include "Interfaz.h"
-
-namespace dentista {
+//	#include "Paciente.h"
+using namespace dentista;
 
 Interfaz::Interfaz() {
 	// TODO Auto-generated constructor stub
@@ -18,4 +18,7 @@ Interfaz::~Interfaz() {
 	// TODO Auto-generated destructor stub
 }
 
-} /* namespace dentista */
+void virtual Interfaz::insertarPaciente(Paciente p)
+{
+
+}
