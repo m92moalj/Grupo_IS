@@ -14,6 +14,22 @@ RedSocial::RedSocial() {
 
 }
 
+const std::string& RedSocial::getCuentaFacebook() const {
+	return cuentaFacebook;
+}
+
+void RedSocial::setCuentaFacebook(const std::string& cuentaFacebook) {
+	this->cuentaFacebook = cuentaFacebook;
+}
+
+const std::string& RedSocial::getCuentaTwitter() const {
+	return cuentaTwitter;
+}
+
+void RedSocial::setCuentaTwitter(const std::string& cuentaTwitter) {
+	this->cuentaTwitter = cuentaTwitter;
+}
+
 RedSocial::~RedSocial() {
 	// TODO Auto-generated destructor stub
 }
