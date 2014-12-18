@@ -90,6 +90,11 @@ void Paciente::setNotas(const std::string& notas) {
 void Paciente::setTelefono(const std::string& telefono) {
 	telefono_ = telefono;
 }
+//Función que devuelve el apellido del paciente seguido de su nombre con el siguiente formato: apellido, paciente.
+string Paciente::getApellidosNombre() {
+    return apellidos_+", "+nombre_;
+}
+
 
 Paciente::~Paciente() {
 	// TODO Auto-generated destructor stub

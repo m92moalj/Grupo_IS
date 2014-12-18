@@ -15,7 +15,7 @@
 namespace dentista {
 
 class Paciente {
-private: 
+private:
 	std::string dni_;
 	std::string nombre_;
 	std::string apellidos_;
@@ -47,6 +47,7 @@ public:
 	void setFrecuencia(int frecuencia);
 	bool isFavorito() const;
 	void setFavorito(bool favorito);
+	std::string getApellidosNombre();
 };
 
 } /* namespace dentista */
