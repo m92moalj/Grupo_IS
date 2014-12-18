@@ -8,6 +8,7 @@
 #ifndef AGENDA_H_
 #define AGENDA_H_
 #include <list>
+#include <string>
 #include <iostream>
 #include "Paciente.h"
 
@@ -21,10 +22,12 @@ public:
 	void setPacientes(const std::list<Paciente>& pacientes);
 	std::list<Paciente> buscarApellido(std::string apellidos);
 	std::list<Paciente> buscarFavoritos(void);
-	void virtual insertarPaciente(Paciente p){std::cout << "Función no definida para esta clase." << std::endl;}
-
+	void insertarPaciente(Paciente p){pacientes_.push_back(p);};
+	void eliminarPaciente(std::string DNI);
+	void ordenar(void);
 private:
 	std::list<Paciente> pacientes_;
+	
 };
 
 } /* namespace dentista */
