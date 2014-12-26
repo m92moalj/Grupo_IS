@@ -16,6 +16,10 @@ class Interfaz: public Agenda {
 public:
 	Interfaz();
 	virtual ~Interfaz();
+
+	virtual std::list<Paciente> cargar() = 0;
+	virtual bool guardar(std::list<Paciente>) = 0;
+
 private:
 
 };
