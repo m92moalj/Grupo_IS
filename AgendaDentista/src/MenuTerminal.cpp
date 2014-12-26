@@ -37,8 +37,8 @@ void MenuTerminal::visualizarPaciente(Paciente p){
 	cout<<p.getNombre()<<endl;
 	cout<<p.getApellidos()<<endl;
 	cout<<p.getTelefono()<<endl;
-	cout<<p.getRedSocial()<<endl;
-	cout<<p.getDireccion<<endl;
+	cout<<p.getRedSocial()<<endl; //Modificar, porque getRedSocial() devuelve un tipo RedSocial. No es imprimible.
+	cout<<p.getDireccion()<<endl; //Modificar, porque getDireccion() devuelve un tipo Direccion. No es imprimible.
 	cout<<p.getNotas()<<endl;
 
 
@@ -47,4 +47,3 @@ void MenuTerminal::visualizarPaciente(Paciente p){
 
 
 } /* namespace dentista */
-
