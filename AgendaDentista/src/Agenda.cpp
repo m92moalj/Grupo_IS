@@ -3,7 +3,6 @@
  *
  *  Created on: 03/12/2014
  *      Author: i32ropie
- * Comentario añadido con ATOM
  */
 
 #include <list>
