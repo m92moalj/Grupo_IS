@@ -14,9 +14,9 @@ using namespace std;
 
 namespace dentista {
 
-Agenda::Agenda() {
+Agenda::Agenda(Interfaz* i) {
 	// TODO Auto-generated constructor stub
-
+	db_ = i;
 }
 //Función que devuelve la lista de pacientes.
 const std::list<Paciente>& Agenda::getPacientes() const {
@@ -54,7 +54,7 @@ void Agenda::eliminarPaciente(string DNI){
 	bool encontrado=false; //Declaro un dato tipo bool que me evite recorrer toda la lista de pacientes si ya ha eliminado el que se quería.
 	for( i=pacientes_.begin() ; i!=pacientes_.end() && !encontrado ; ++i) { //Recorro la lista, teniendo en cuenta que no hayamos encontrado aún el paciente a eliminar.
 		if((*i).getDni()==DNI){ //Comprobamos si el DNI del paciente coincide con el pasado a la función.
-			pacientes_.erase(*i); //En tal caso, borro dicho paciente de la lista.
+			pacientes_.erase(i); //En tal caso, borro dicho paciente de la lista.
 			encontrado=true; //Y actualizamo 'encontrado' para salir del bucle.
 		}
 	}
@@ -63,8 +63,9 @@ void Agenda::eliminarPaciente(string DNI){
 void Agenda::ordenar(void){
 	list<Paciente>::iterator i; //Declaro un iterador de paciente
 	list<Paciente> auxP; //Declaro una lista de pacientes auxiliar, donde guardaremos los pacientes ordenados.
-	list<string> auxL; //Declaro una lista de string, donde guardaremos el apellido de los pacientes.
+	list<string> auxL; //Declaro una lista de string, donde guardaremos el apellido+nombre de los pacientes.
 	list<string>::iterator j; //Declaro un iterador de string.
+	bool encontrado=false;
 
 	for( i=pacientes_.begin() ; i!=pacientes_.end() ; ++i){ //Recorro la lista de pacientes.
 		auxL.push_back((*i).getApellidosNombre()); //Guardo en la lista de string todos los nombres.
@@ -73,15 +74,28 @@ void Agenda::ordenar(void){
 	auxL.sort(); //Ordeno alfabéticamente esa lista con la función predefinida 'sort'.
 
 	for( j=auxL.begin() ; j!=auxL.end() ; ++j ){ //Posteriormente, recorro dicha lista.
-		for( i=pacientes_.begin() ; i!=pacientes_.end() ; ++i){ //Y por cada nombre, recorro la lista de pacientes.
+		for( i=pacientes_.begin() ; i!=pacientes_.end() && !encontrado ; ++i){ //Y por cada nombre, recorro la lista de pacientes.
 			if((*i).getApellidosNombre()==(*j)) //Compruebo si coincide el apellido+nombre del paciente i-ésimo con el de la lista de string.
 				auxP.push_back(*i); //En tal caso, lo añado a lista auxiliar de pacientes.
+				pacientes_.erase(i);
+				encontrado=true;
 			}
 		}
+		encontrado=false;
 	}
 	//Al terminal el bucle, tendremos en la lista auxP los pacientes ordenados alfabéticamente.
 	setPacientes(auxP); //Guardamos en nuestra lista de pacientes la lista ya ordenada.
 }
+//
+void Agenda::guardar(void){
+	db_.guardar(pacientes_);
+}
+//
+void Agenda::cargar(void){
+	db_.cargar();
+}
+
+
 
 Agenda::~Agenda() {
 	// TODO Auto-generated destructor stub
