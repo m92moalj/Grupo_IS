@@ -90,7 +90,7 @@ void Paciente::setNotas(const std::string& notas) {
 void Paciente::setTelefono(const std::string& telefono) {
 	telefono_ = telefono;
 }
-//Función que devuelve el apellido del paciente seguido de su nombre con el siguiente formato: apellido, paciente.
+//Función que devuelve el apellido del paciente seguido de su nombre con el siguiente formato: apellido, nombre.
 string Paciente::getApellidosNombre() {
     return apellidos_+", "+nombre_;
 }
