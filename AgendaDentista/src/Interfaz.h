@@ -18,7 +18,7 @@ public:
 	virtual ~Interfaz();
 
 	virtual std::list<Paciente> cargar() = 0;
-	virtual bool guardar(std::list<Paciente>) = 0;
+	virtual int guardar(std::list<Paciente>) = 0;
 
 private:
 

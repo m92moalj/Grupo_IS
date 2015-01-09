@@ -6,7 +6,7 @@
  */
 
 #include "Interfaz.h"
-//	#include "Paciente.h"
+
 using namespace dentista;
 
 Interfaz::Interfaz() {
