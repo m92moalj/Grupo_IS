@@ -14,9 +14,9 @@ using namespace std;
 
 namespace dentista {
 
-Agenda::Agenda(Interfaz* i) {
+Agenda::Agenda(Interfaz* i):db_(i) {
 	// TODO Auto-generated constructor stub
-	db_ = i;
+	//db_ = i;
 }
 //Función que devuelve la lista de pacientes.
 const std::list<Paciente>& Agenda::getPacientes() const {
@@ -88,11 +88,11 @@ void Agenda::ordenar(void){
 }
 //
 void Agenda::guardar(void){
-	db_.guardar(pacientes_);
+	db_->guardar(pacientes_);
 }
 //
 void Agenda::cargar(void){
-	db_.cargar();
+	pacientes_=db_->cargar();
 }
 
 

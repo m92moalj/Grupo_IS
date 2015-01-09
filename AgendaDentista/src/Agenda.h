@@ -26,7 +26,7 @@ public:
 	void eliminarPaciente(std::string DNI);
 	void ordenar(void);
 	void guardar(void);
-	void cargar(void)
+	void cargar(void);
 private:
 	std::list<Paciente> pacientes_;
 	Interfaz* db_;
