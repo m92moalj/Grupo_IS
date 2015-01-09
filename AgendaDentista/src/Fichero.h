@@ -9,7 +9,7 @@ private:
 public:
     Fichero(std::string fichero):fichero_(fichero){};
     std::list<Paciente> cargar();
-    bool guardar(std::list<Paciente> pacientes);
+    void guardar(std::list<Paciente> pacientes);
 };
 
 

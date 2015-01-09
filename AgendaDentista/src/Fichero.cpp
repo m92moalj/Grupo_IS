@@ -20,7 +20,7 @@ list<Paciente> Fichero::cargar(void){
         f.getline(linea,256,',');
         auxP.setApellidos(linea);
         f.getline(linea,256,',');
-        auxP.setDni();
+        auxP.setDni(linea);
         f.getline(linea,256,',');
         auxP.setTelefono(linea);
         f.getline(linea,256,',');
@@ -28,11 +28,18 @@ list<Paciente> Fichero::cargar(void){
         f.getline(linea,256,',');
         auxR.setCuentaTwitter(linea);
         auxP.setRedSocial(auxR);
-        /*
-        *
-        * Hueco para Dirección.
-        *
-        */
+        f.getline(linea,256,',');
+        auxD.setCalle(linea);
+        f.getline(linea,256,',');
+        auxD.setNumPortal(linea);
+        f.getline(linea,256,',');
+        auxD.setNumPiso(atoi(linea));
+        f.getline(linea,256,',');
+        auxD.setNumPuerta(linea);
+        f.getline(linea,256,',');
+        auxD.setEscalera(linea);
+        f.getline(linea,256,',');
+        auxD.setTipoVia(linea);
         auxP.setDireccion(auxD);
         f.getline(linea,256,',');
         auxP.setNotas(linea);
@@ -48,16 +55,38 @@ list<Paciente> Fichero::cargar(void){
 }
 
 void Fichero::guardar(list<Paciente> pacientes){
-    /*
-    *
-    * Añadir en algún lado comprobar que ya exista el fichero y no esté vacío. Si no lo está, preguntar si sobreescribir o dejar como está.
-    *
-    */
     ofstream f(fichero_);
     list<Paciente>::iterator i;
     for(i=pacientes.begin() ; i!=pacientes.end() ; ++i){
-        f << (*i).getNombre() << "," << (*i).getApellidos() << "," << (*i).getDni() << "," << (*i).getTelefono() << "," << (*i).getCuentaFacebook() << "," << (*i).getCuentaTwitter() << "," << /* Hueco para dirección */ << "," << (*i).getNotas() << ",";
-        if((*i).getFavorito()) f << "true," << (*i).getFrecuencia() << endl;
-        else f << "false," << (*i).getFrecuencia() << endl;
+        f << (*i).getNombre();
+        f << "," ;
+        f << (*i).getApellidos();
+        f << ",";
+        f << (*i).getDni();
+        f << ",";
+        f << (*i).getTelefono();
+        f << ",";
+        f << (*i).getRedSocial().getCuentaFacebook();
+        f << ",";
+        f << (*i).getRedSocial().getCuentaTwitter();
+        f << ",";
+        f << (*i).getDireccion().getCalle();
+        f << ",";
+        f << (*i).getDireccion().getNumPortal();
+        f << ",";
+        f << (*i).getDireccion().getNumPiso();
+        f << ",";
+        f << (*i).getDireccion().getNumPuerta();
+        f << ",";
+        f << (*i).getDireccion().getEscalera();
+        f << ",";
+        f << (*i).getDireccion().getTipoVia();
+        f << ",";
+        f << (*i).getNotas();
+        f << ",";
+        if((*i).getFavorito()) f << "true,";
+        else f << "false,";
+        f << (*i).getFrecuencia();
+        f << "\n";
     }
 }
