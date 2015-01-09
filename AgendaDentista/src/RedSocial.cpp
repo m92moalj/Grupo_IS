@@ -11,6 +11,8 @@ namespace dentista {
 
 RedSocial::RedSocial() {
 	// TODO Auto-generated constructor stub
+	setCuentaTwitter("-------");
+	setCuentaFacebook("-------");
 
 }
 
