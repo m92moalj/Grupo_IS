@@ -52,19 +52,23 @@ int main() {
 				mostrarLista(auxL);
 				break;
 			case 4:
+				system("clear");
 				m.getAgenda().insertarPaciente(m.rellenaPaciente());
 				m.getAgenda().ordenar();
 				break;
 			case 5:
+				system("clear");
 				cout << "Guardando agenda." << endl;
 				m.getAgenda().guardar();
 				cout << "Agenda guardada." << endl;
 				break;
 			case 6:
+			  system("clear");
 				cout << endl << "Gracias por usar el programa. Adios." << endl;
 				salir=true;
 				break;
 			default:
+			  system("clear");
 				cout << "Opción no válida. Escriba una entre 1 y 6" << endl;
 
 		}

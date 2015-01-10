@@ -75,7 +75,7 @@ void Agenda::ordenar(void){
 
 	for( j=auxL.begin() ; j!=auxL.end() ; ++j ){ //Posteriormente, recorro dicha lista.
 		for( i=pacientes_.begin() ; i!=pacientes_.end() && !encontrado ; ++i){ //Y por cada nombre, recorro la lista de pacientes.
-			if((*i).getApellidosNombre()==(*j)) //Compruebo si coincide el apellido+nombre del paciente i-ésimo con el de la lista de string.
+			if((*i).getApellidosNombre()==(*j)){ //Compruebo si coincide el apellido+nombre del paciente i-ésimo con el de la lista de string.
 				auxP.push_back(*i); //En tal caso, lo añado a lista auxiliar de pacientes.
 				pacientes_.erase(i);
 				encontrado=true;
