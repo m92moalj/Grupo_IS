@@ -9,12 +9,10 @@
 #define PACIENTE_H_
 
 #include <string>
-#include "Fichero.h"
-#include "MenuTerminal.h"
+
 #include "RedSocial.h"
 #include "Direccion.h"
-#include "Interfaz.h"
-#include "Agenda.h"
+
 
 namespace dentista {
 

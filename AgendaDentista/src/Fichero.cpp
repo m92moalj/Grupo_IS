@@ -2,6 +2,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <cstdlib>
 #include "Interfaz.h"
 #include "Fichero.h"
 #include "Paciente.h"

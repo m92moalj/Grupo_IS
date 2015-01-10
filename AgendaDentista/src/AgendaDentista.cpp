@@ -13,11 +13,11 @@
 #include <unistd.h>
 #include "Fichero.h"
 #include "MenuTerminal.h"
-#include "RedSocial.h"
-#include "Direccion.h"
 #include "Interfaz.h"
 #include "Paciente.h"
 #include "Agenda.h"
+
+
 using namespace std;
 
 int main() {

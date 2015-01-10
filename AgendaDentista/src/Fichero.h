@@ -3,12 +3,10 @@
 
 #include <string>
 #include <list>
-#include "MenuTerminal.h"
-#include "RedSocial.h"
-#include "Direccion.h"
+
 #include "Interfaz.h"
 #include "Paciente.h"
-#include "Agenda.h"
+
 
 class Fichero: Public Interfaz {
 private:

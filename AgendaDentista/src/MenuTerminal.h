@@ -8,10 +8,6 @@
 #ifndef MENUTERMINAL_H_
 #define MENUTERMINAL_H_
 
-#include "Fichero.h"
-#include "RedSocial.h"
-#include "Direccion.h"
-#include "Interfaz.h"
 #include "Paciente.h"
 #include "Agenda.h"
 
