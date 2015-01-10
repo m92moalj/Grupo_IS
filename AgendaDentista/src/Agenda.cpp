@@ -14,7 +14,7 @@ using namespace std;
 
 namespace dentista {
 
-Agenda::Agenda(Interfaz* i):db_(i) {
+Agenda::Agenda(Interfaz (*i)):db_(i) {
 	// TODO Auto-generated constructor stub
 	//db_ = i;
 }
