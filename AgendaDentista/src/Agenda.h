@@ -16,7 +16,7 @@
 
 namespace dentista {
 
-class Agenda {
+class Agenda: public Interfaz{
 public:
 	Agenda(Interfaz *i);
 	virtual ~Agenda();
