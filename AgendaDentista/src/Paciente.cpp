@@ -7,7 +7,13 @@
 
 #include <string>
 
+#include "Fichero.h"
+#include "MenuTerminal.h"
+#include "RedSocial.h"
+#include "Direccion.h"
+#include "Interfaz.h"
 #include "Paciente.h"
+#include "Agenda.h"
 
 using namespace std;
 

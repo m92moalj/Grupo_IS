@@ -8,6 +8,12 @@
 #ifndef INTERFAZ_H_
 #define INTERFAZ_H_
 
+#include <list>
+#include "Fichero.h"
+#include "MenuTerminal.h"
+#include "RedSocial.h"
+#include "Direccion.h"
+#include "Paciente.h"
 #include "Agenda.h"
 
 using namespace dentista;

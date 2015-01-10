@@ -2,7 +2,11 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include "Interfaz.h"
 #include "Fichero.h"
+#include "Paciente.h"
+#include "RedSocial.h"
+#include "Direccion.h"
 
 using namespace dentista;
 using namespace std;

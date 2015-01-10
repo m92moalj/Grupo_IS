@@ -8,6 +8,14 @@
 #ifndef REDSOCIAL_H_
 #define REDSOCIAL_H_
 
+#include <string>
+#include "Fichero.h"
+#include "MenuTerminal.h"
+#include "Direccion.h"
+#include "Interfaz.h"
+#include "Paciente.h"
+#include "Agenda.h"
+
 namespace dentista {
 
 class RedSocial {

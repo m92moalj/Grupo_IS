@@ -7,9 +7,14 @@
 
 #ifndef AGENDA_H_
 #define AGENDA_H_
+
 #include <list>
 #include <string>
-#include <iostream>
+#include "Fichero.h"
+#include "MenuTerminal.h"
+#include "RedSocial.h"
+#include "Direccion.h"
+#include "Interfaz.h"
 #include "Paciente.h"
 
 namespace dentista {

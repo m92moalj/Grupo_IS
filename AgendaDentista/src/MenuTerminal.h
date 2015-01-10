@@ -8,22 +8,28 @@
 #ifndef MENUTERMINAL_H_
 #define MENUTERMINAL_H_
 
+#include "Fichero.h"
+#include "RedSocial.h"
+#include "Direccion.h"
+#include "Interfaz.h"
 #include "Paciente.h"
 #include "Agenda.h"
 
 namespace dentista {
 
-class MenuTerminal:public Paciente{
+class MenuTerminal{
 private:
-	void menuPrincipal();
-
+	Agenda a_;
 public:
-	MenuTerminal();
+	MenuTerminal(Agenda a);
 	virtual ~MenuTerminal();
+	void menuPrincipal();
 	void visualizarPaciente(Paciente p);
-	void visualizarAgenda(Agenda a);
-
-
+	void visualizarAgenda();
+	void llamarPaciente(Paciente *p);
+	Agenda getAgenda(void){return a_;};
+	void setAgenda(Agenda a){a_=a;};
+	void visualizarAgenda();
 };
 
 } /* namespace dentista */
