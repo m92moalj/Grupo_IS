@@ -6,7 +6,7 @@
  */
 
 #include <string>
-
+#include <cstring>
 #include "RedSocial.h"
 #include "Direccion.h"
 #include "Paciente.h"
@@ -103,3 +103,10 @@ Paciente::~Paciente() {
 }
 
 } /* namespace dentista */
+
+char *stringToChar(string aux1){
+	int len=aux1.length();
+	char *aux2 = new char[len+1];
+	strcpy(aux2,aux1.c_str());
+	return aux2;
+}

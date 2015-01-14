@@ -8,7 +8,7 @@
  #include "Interfaz.h"
 
 
-using namespace dentista;
+ namespace dentista {
 
 Interfaz::Interfaz() {
 	// TODO Auto-generated constructor stub
@@ -17,4 +17,6 @@ Interfaz::Interfaz() {
 
 Interfaz::~Interfaz() {
 	// TODO Auto-generated destructor stub
+}
+
 }

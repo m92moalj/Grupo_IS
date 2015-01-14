@@ -53,4 +53,7 @@ public:
 };
 
 } /* namespace dentista */
+
+char *stringToChar(std::string aux1);
+
 #endif /* PACIENTE_H_ */

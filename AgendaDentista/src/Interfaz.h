@@ -11,20 +11,17 @@
 #include <list>
 
 #include "Paciente.h"
-#include "Agenda.h"
 
-using namespace dentista;
+namespace dentista {
 
-class Interfaz: public Agenda {
+class Interfaz{
 public:
 	Interfaz();
 	virtual ~Interfaz();
 
 	virtual std::list<Paciente> cargar() = 0;
 	virtual int guardar(std::list<Paciente>) = 0;
-
-private:
-
 };
 
+}
 #endif /* INTERFAZ_H_ */

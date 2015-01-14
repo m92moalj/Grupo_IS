@@ -14,12 +14,12 @@ using namespace std;
 
 namespace dentista {
 
-Agenda::Agenda(Interfaz* i):db_(i) {
-	// TODO Auto-generated constructor stub
-	//db_ = i;
+Agenda::Agenda(Interfaz *i) {
+	// TODO Auto-generated constructor stubAgenda
+	db_ = i;
 }
 //Función que devuelve la lista de pacientes.
-const std::list<Paciente>& Agenda::getPacientes() const {
+std::list<Paciente>& Agenda::getPacientes() {
 	return pacientes_;
 }
 //Función que asigna la lista de pacientes.
@@ -59,7 +59,7 @@ void Agenda::eliminarPaciente(string DNI){
 		}
 	}
 }
-//Función que ordena los pacientes de la lista por su apellido. Comprueba también el nombre para que sea más exacta.
+//Función que ordena los pacientes Agendade la lista por su apellido. Comprueba también el nombre para que sea más exacta.
 void Agenda::ordenar(void){
 	list<Paciente>::iterator i; //Declaro un iterador de paciente
 	list<Paciente> auxP; //Declaro una lista de pacientes auxiliar, donde guardaremos los pacientes ordenados.
@@ -75,7 +75,7 @@ void Agenda::ordenar(void){
 
 	for( j=auxL.begin() ; j!=auxL.end() ; ++j ){ //Posteriormente, recorro dicha lista.
 		for( i=pacientes_.begin() ; i!=pacientes_.end() && !encontrado ; ++i){ //Y por cada nombre, recorro la lista de pacientes.
-			if((*i).getApellidosNombre()==(*j)) //Compruebo si coincide el apellido+nombre del paciente i-ésimo con el de la lista de string.
+			if((*i).getApellidosNombre()==(*j)){ //Compruebo si coincide el apellido+nombre del paciente i-ésimo con el de la lista de string.
 				auxP.push_back(*i); //En tal caso, lo añado a lista auxiliar de pacientes.
 				pacientes_.erase(i);
 				encontrado=true;
