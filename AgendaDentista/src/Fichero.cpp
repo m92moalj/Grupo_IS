@@ -9,17 +9,17 @@
 #include "RedSocial.h"
 #include "Direccion.h"
 
-using namespace dentista;
 using namespace std;
+
+namespace dentista {
 
 list<Paciente> Fichero::cargar(void){
     list<Paciente> auxL;
     Paciente auxP;
     RedSocial auxR;
     Direccion auxD;
-    bool auxB;
     char linea[256];
-    ifstream f(fichero_);
+    ifstream f(stringToChar(fichero_));
     while(f.getline(linea,256,',')){
         auxP.setNombre(linea);
         f.getline(linea,256,',');
@@ -49,18 +49,18 @@ list<Paciente> Fichero::cargar(void){
         f.getline(linea,256,',');
         auxP.setNotas(linea);
         f.getline(linea,256,',');
-        if(linea=="true") auxB=true;
-        else if(linea=="false") auxB=false;
+        if(linea=="true") auxP.setFavorito(true);
+        else if(linea=="false") auxP.setFavorito(false);
         else cout << "Error cargando favorito en: " << auxP.getApellidosNombre() << endl;
         f.getline(linea,256);
-        auxP.setFrequencia(atoi(linea));
+        auxP.setFrecuencia(atoi(linea));
         auxL.push_back(auxP);
     }
     return auxL;
 }
 
-void Fichero::guardar(list<Paciente> pacientes){
-    ofstream f(fichero_);
+int Fichero::guardar(list<Paciente> pacientes){
+    ofstream f(stringToChar(fichero_));
     list<Paciente>::iterator i;
     for(i=pacientes.begin() ; i!=pacientes.end() ; ++i){
         f << (*i).getNombre();
@@ -89,9 +89,13 @@ void Fichero::guardar(list<Paciente> pacientes){
         f << ",";
         f << (*i).getNotas();
         f << ",";
-        if((*i).getFavorito()) f << "true,";
+        if((*i).isFavorito()) f << "true,";
         else f << "false,";
         f << (*i).getFrecuencia();
         f << "\n";
     }
+
+    return 1; // TODO: CAmbiar
+}
+
 }

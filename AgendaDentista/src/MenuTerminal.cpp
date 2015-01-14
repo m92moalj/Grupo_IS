@@ -8,6 +8,8 @@
 #include <iostream>
 #include <list>
 #include <cstdio>
+#include <cstring>
+#include <cstdlib>
 #include "MenuTerminal.h"
 #include "RedSocial.h"
 #include "Direccion.h"
@@ -18,22 +20,19 @@ using namespace std;
 
 namespace dentista {
 
-MenuTerminal::MenuTerminal(Agenda a) {
+MenuTerminal::MenuTerminal(Agenda *a) {
 	// TODO Auto-generated constructor stub
 	a_=a;
-	a_.cargar();
-	a_.ordenar();
+	a_->cargar();
+	a_->ordenar();
 	list<Paciente>::iterator i;
-	for( i=a_.getPacientes().begin() ; i!=a_.getPacientes().end() ; ++i){
-		if(!(*i).getFavorito() && (*i).getFrecuencia()<10 ) (*i).setFavorito(true);
-	}
 }
 
 MenuTerminal::~MenuTerminal() {
 	// TODO Auto-generated destructor stub
 }
 
-void MenuTerminal::menuPrincipal() {
+int MenuTerminal::menuPrincipal() {
 	int opcion=0;
 	system("clear");
 	cout << "##########################################";
@@ -59,7 +58,7 @@ void MenuTerminal::menuPrincipal() {
 }
 
 void MenuTerminal::visualizarAgenda(){
-	mostrarLista(a_.getPacientes());
+	mostrarLista(&(a_->getPacientes()));
 }
 
 void MenuTerminal::mostrarLista(list<Paciente> *pacientes){
@@ -108,7 +107,7 @@ void MenuTerminal::visualizarPaciente(Paciente p){
 	cout << "\tCuenta Twitter: " << p.getRedSocial().getCuentaTwitter() << endl;
 	cout << "\tDirección: " << p.getDireccion().getTipoVia() << " " << p.getDireccion().getCalle() << " nº " << p.getDireccion().getNumPortal() << ", Escalera " << p.getDireccion().getEscalera() << " " << p.getDireccion().getNumPiso() << "º " << p.getDireccion().getNumPuerta() << endl;
 	cout << "\tNotas: " << p.getNotas() << endl;
-	if(p.getFavorito()) cout << "\tFavorito: Sí" << endl;
+	if(p.isFavorito()) cout << "\tFavorito: Sí" << endl;
 	else cout << "\tFavorito: No" << endl;
 	cout << "\tFrecuencia: " << p.getFrecuencia() << endl<<endl;
 }
@@ -131,17 +130,17 @@ Paciente MenuTerminal::rellenaPaciente(){
 	auxP.setApellidos(auxS);
 	cout << "DNI: ";
 	cin >> auxS;
-	auxP.setDNI(auxS);
+	auxP.setDni(auxS);
 	cout << "Teléfono: ";
 	cin >> auxS;
 	auxP.setTelefono(auxS);
 	cout << "Cuenta facebook: ";
 	getline(cin, auxS, '\n');
-	auxR.setFacebook(auxS);
+	auxR.setCuentaFacebook(auxS);
 	cout << "Cuenta twitter: ";
 	cin >> auxS;
-	auxR.setTwitter(auxS);
-	auxP.setRedSocial(auxP);
+	auxR.setCuentaTwitter(auxS);
+	auxP.setRedSocial(auxR);
 	cout << "Tipo de vía: ";
 	getline(cin, auxS, '\n');
 	auxD.setTipoVia(auxS);
@@ -156,7 +155,7 @@ Paciente MenuTerminal::rellenaPaciente(){
 	auxD.setEscalera(auxS);
 	cout << "Nº Piso: ";
 	getline(cin, auxS, '\n');
-	auxD.setNumPiso(auxS);
+	auxD.setNumPiso(atoi(stringToChar(auxS)));
 	cout << "Nº Puerta: ";
 	getline(cin, auxS, '\n');
 	auxD.setNumPuerta(auxS);
@@ -169,3 +168,5 @@ Paciente MenuTerminal::rellenaPaciente(){
 }
 
 } /* namespace dentista */
+
+

@@ -16,11 +16,11 @@
 
 namespace dentista {
 
-class Agenda: public Interfaz{
+class Agenda {
 public:
-	Agenda(Interfaz *i);
+	Agenda(Interfaz* i);
 	virtual ~Agenda();
-	const std::list<Paciente>& getPacientes() const;
+	std::list<Paciente>& getPacientes();
 	void setPacientes(const std::list<Paciente>& pacientes);
 	std::list<Paciente> buscarApellido(std::string apellidos);
 	std::list<Paciente> buscarFavoritos(void);
@@ -31,7 +31,7 @@ public:
 	void cargar(void);
 private:
 	std::list<Paciente> pacientes_;
-	Interfaz* db_;
+	Interfaz *db_;
 
 };
 

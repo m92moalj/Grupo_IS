@@ -7,16 +7,17 @@
 #include "Interfaz.h"
 #include "Paciente.h"
 
+namespace dentista {
 
-class Fichero: Public Interfaz {
+class Fichero: public Interfaz {
 private:
     std::string fichero_;
 public:
     Fichero(std::string fichero):fichero_(fichero){};
     std::list<Paciente> cargar();
-    void guardar(std::list<Paciente> pacientes);
+    int guardar(std::list<Paciente> pacientes);
 };
 
-
+}
 
 #endif

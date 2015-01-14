@@ -15,18 +15,22 @@ namespace dentista {
 
 class MenuTerminal{
 private:
-	Agenda a_;
+	Agenda* a_;
 public:
-	MenuTerminal(Agenda a);
+	MenuTerminal(Agenda *a);
 	virtual ~MenuTerminal();
-	void menuPrincipal();
+	int menuPrincipal();
 	void visualizarPaciente(Paciente p);
 	void visualizarAgenda();
 	void llamarPaciente(Paciente *p);
-	Agenda getAgenda(void){return a_;};
-	void setAgenda(Agenda a){a_=a;};
-	void visualizarAgenda();
+	Agenda* getAgenda(void){return a_;};
+	void setAgenda(Agenda* a){a_=a;};
+	void mostrarLista(std::list<Paciente> *pacientes);
+	Paciente rellenaPaciente();
 };
 
 } /* namespace dentista */
+
+
+
 #endif /* MENUTERMINAL_H_ */
