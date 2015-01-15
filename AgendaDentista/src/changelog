@@ -1,0 +1,11 @@
+v 1.0:
+	-Funciona por fin.
+	-Fallos en Visualizar Agenda:
+		-Si hay 5 contactos, cuando nos pregunta cuál contacto queremos ver pasa lo siguiente:
+			1) Si introducimos un número del 1 al 5 o 0, funciona perfecto.
+			2) Si introducimos 6, da violación del segmento.
+			3) Si introducimos 7 mostrará el número 1, con el 8 el 2... hasta llegar a 11, que mostraría el 5.
+			4) Si introducimos el 12, vuelve a dar violación de segmento. Luego con 13 muestra el 1... Sigue ese patrón.
+		-Se debería hacer que si no hay ningún paciente en la agenda, avise al intentar visualizarla.
+	-Fallos en buscar contacto por apellido:
+		-No actualiza correctamente. Si visualizas un paciente, luego no se guarda 
