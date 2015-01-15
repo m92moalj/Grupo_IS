@@ -8,4 +8,7 @@ v 1.0:
 			4) Si introducimos el 12, vuelve a dar violación de segmento. Luego con 13 muestra el 1... Sigue ese patrón.
 		-Se debería hacer que si no hay ningún paciente en la agenda, avise al intentar visualizarla.
 	-Fallos en buscar contacto por apellido:
-		-No actualiza correctamente. Si visualizas un paciente, luego no se guarda 
+		-No actualiza correctamente. Si visualizas un paciente, luego no se guarda. Si lo modificas/eliminas tampoco.
+		-Mismos fallos al preguntar que en Visualizar Agenda.
+	-Fallos en Visualizar contactos favoritos:
+		-No sé si funciona, pues he intentado forzar manualmente que sea un contacto favorito modificando el archivo 'almacen.txt' y aún así seguía sin ser favorito.

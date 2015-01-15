@@ -41,6 +41,7 @@ int main() {
 			case 2:
 				system("clear");
 				cout << "Introduce el apellido del contacto: ";
+				getchar();
 				getline(cin,auxS,'\n');
 				auxL=m.getAgenda()->buscarApellido(auxS);
 				cout << "Lista de pacientes con apellido " << auxS << endl;

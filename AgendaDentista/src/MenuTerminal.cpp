@@ -35,20 +35,20 @@ MenuTerminal::~MenuTerminal() {
 int MenuTerminal::menuPrincipal() {
 	int opcion=0;
 	system("clear");
-	cout << "##########################################";
-	cout << "##########################################";
-	cout << "#####                                #####";
-	cout << "#####             Agenda             #####";
-	cout << "#####           OranGITops           #####";
-	cout << "#####                                #####";
-	cout << "#####                          v 1.0 #####";
-	cout << "##########################################";
+	cout << "##########################################" << endl;
+	cout << "##########################################" << endl;
+	cout << "#####                                #####" << endl;
+	cout << "#####             Agenda             #####" << endl;
+	cout << "#####           OranGITops           #####" << endl;
+	cout << "#####                                #####" << endl;
+	cout << "#####                          v 1.0 #####" << endl;
+	cout << "##########################################" << endl;
 	cout << "##########################################" << endl;
 	cout << "\e[1mOpciones de la agenda:" << endl;
 	cout << "\t\e[31m1)\e[0m Visualizar agenda. (Se mostrarán todos los pacientes)" << endl;
 	cout << "\t\e[1;31m2)\e[0m Buscar contacto por apellido. (Se mostrarán todos los pacientes con apellido coincidente)" << endl;
 	cout << "\t\e[1;31m3)\e[0m Visualizar contactos favoritos. (Se mostrarán todos los pacientes favoritos)" << endl;
-	cout << "\t\e[1;31m4)\e[0m Añadir paciente.";
+	cout << "\t\e[1;31m4)\e[0m Añadir paciente." << endl;
 	cout << "\t\e[1;31m5)\e[0m Guardar agenda." << endl;
 	cout << "\t\e[1;31m6)\e[0m Salir del programa." << endl;
 	cout << "Elija qué pción desea realizar: ";
@@ -74,7 +74,7 @@ void MenuTerminal::mostrarLista(list<Paciente> *pacientes){
 	if(opcion==0){
 		cout << "De acuerdo. Volviendo al menú principal." << endl;
 	}
-	else if(opcion<0 && opcion>j){
+	else if(opcion<0 && opcion>=j){
 		cout << "Número no válido." << endl;
 	}
 	else{
@@ -123,7 +123,8 @@ Paciente MenuTerminal::rellenaPaciente(){
 	Direccion auxD;
 	string auxS;
 	cout << "Nombre: ";
-	cin >> auxS;
+	getchar();
+	getline(cin, auxS, '\n');
 	auxP.setNombre(auxS);
 	cout << "Apellidos: ";
 	getline(cin, auxS, '\n');
@@ -133,12 +134,13 @@ Paciente MenuTerminal::rellenaPaciente(){
 	auxP.setDni(auxS);
 	cout << "Teléfono: ";
 	cin >> auxS;
+	getchar();
 	auxP.setTelefono(auxS);
 	cout << "Cuenta facebook: ";
 	getline(cin, auxS, '\n');
 	auxR.setCuentaFacebook(auxS);
 	cout << "Cuenta twitter: ";
-	cin >> auxS;
+	getline(cin, auxS, '\n');
 	auxR.setCuentaTwitter(auxS);
 	auxP.setRedSocial(auxR);
 	cout << "Tipo de vía: ";
