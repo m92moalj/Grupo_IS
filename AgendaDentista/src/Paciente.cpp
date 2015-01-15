@@ -94,9 +94,16 @@ void Paciente::setTelefono(const std::string& telefono) {
 }
 //Función que devuelve el apellido del paciente seguido de su nombre con el siguiente formato: apellido, nombre.
 string Paciente::getApellidosNombre() {
-    return apellidos_+", "+nombre_;
+	return apellidos_ + ", " + nombre_;
 }
 
+bool Paciente::operator<(Paciente &p) {
+	if (getApellidos().compare(p.getApellidos()) < 0) {
+		return true;
+	} else {
+		return false;
+	}
+}
 
 Paciente::~Paciente() {
 	// TODO Auto-generated destructor stub
@@ -104,9 +111,9 @@ Paciente::~Paciente() {
 
 } /* namespace dentista */
 
-char *stringToChar(string aux1){
-	int len=aux1.length();
-	char *aux2 = new char[len+1];
-	strcpy(aux2,aux1.c_str());
+char *stringToChar(string aux1) {
+	int len = aux1.length();
+	char *aux2 = new char[len + 1];
+	strcpy(aux2, aux1.c_str());
 	return aux2;
 }

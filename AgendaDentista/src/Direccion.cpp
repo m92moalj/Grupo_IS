@@ -9,7 +9,6 @@
 
 #include "Direccion.h"
 
-
 namespace dentista {
 
 const std::string& dentista::Direccion::getCalle() const {

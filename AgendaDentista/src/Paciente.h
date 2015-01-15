@@ -13,7 +13,6 @@
 #include "RedSocial.h"
 #include "Direccion.h"
 
-
 namespace dentista {
 
 class Paciente {
@@ -50,6 +49,7 @@ public:
 	bool isFavorito() const;
 	void setFavorito(bool favorito);
 	std::string getApellidosNombre();
+	bool operator<(Paciente &p);
 };
 
 } /* namespace dentista */

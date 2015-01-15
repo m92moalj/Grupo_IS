@@ -1,3 +1,12 @@
+v 1.1:
+	-Fallos arreglados:
+		-Visualizar Agenda funciona perfectamente (o eso creo).
+		-Ahora las funciones 'Buscar contacto por apellido' y 'Visualizar contactos favoritos' si actualizan los pacientes modificados.
+		-'Visualizar contactos favoritos' llama a una función que hace favoritos a todos los pacientes con frecuencia igual o superior a 10.
+	
+	-Fallos conocidos:
+		-Aún no funciona borrar pacientes desde 'Buscar contacto por apellido' y 'Visualizar contactos favoritos'.
+
 v 1.0:
 	-Funciona por fin.
 	-Fallos en Visualizar Agenda:

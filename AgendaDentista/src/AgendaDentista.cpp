@@ -13,7 +13,6 @@
 #include <unistd.h>
 #include "Fichero.h"
 #include "MenuTerminal.h"
-//#include "Interfaz.h"
 #include "Paciente.h"
 #include "Agenda.h"
 
@@ -34,36 +33,50 @@ int main() {
 	do{
 		switch(m.menuPrincipal()) {
 			case 1:
-				system("clear");
-				m.visualizarAgenda();
-
+				m.cabecera();
+				if(!m.getAgenda()->getPacientes().empty()){
+					m.visualizarAgenda();
+				}
+				else{
+					cout << "Agenda vacía, volviendo al menú principal." << endl;
+					sleep(2);
+				}
 				break;
 			case 2:
-				system("clear");
+				m.cabecera();
 				cout << "Introduce el apellido del contacto: ";
 				getchar();
 				getline(cin,auxS,'\n');
 				auxL=m.getAgenda()->buscarApellido(auxS);
 				cout << "Lista de pacientes con apellido " << auxS << endl;
 				m.mostrarLista(&auxL);
+				m.fusionLista(auxL);
 				break;
 			case 3:
-				system("clear");
+				m.cabecera();
 				cout << "Lista de favoritos." << endl;
+				m.checkFavoritos();
 				auxL=m.getAgenda()->buscarFavoritos();
 				m.mostrarLista(&auxL);
+				m.fusionLista(auxL);
 				break;
 			case 4:
+				m.cabecera();
 				m.getAgenda()->insertarPaciente(m.rellenaPaciente());
 				m.getAgenda()->ordenar();
 				break;
 			case 5:
+				m.cabecera();
 				cout << "Guardando agenda." << endl;
+				sleep(1);
 				m.getAgenda()->guardar();
 				cout << "Agenda guardada." << endl;
 				break;
 			case 6:
+				m.cabecera();
 				cout << endl << "Gracias por usar el programa. Adios." << endl;
+				sleep(2);
+				system("clear");
 				salir=true;
 				break;
 			default:

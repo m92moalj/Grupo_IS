@@ -19,6 +19,7 @@ private:
 public:
 	MenuTerminal(Agenda *a);
 	virtual ~MenuTerminal();
+	void cabecera();
 	int menuPrincipal();
 	void visualizarPaciente(Paciente p);
 	void visualizarAgenda();
@@ -27,10 +28,10 @@ public:
 	void setAgenda(Agenda* a){a_=a;};
 	void mostrarLista(std::list<Paciente> *pacientes);
 	Paciente rellenaPaciente();
+	void checkFavoritos(void);
+	void fusionLista(std::list<Paciente> aux);
 };
 
 } /* namespace dentista */
-
-
 
 #endif /* MENUTERMINAL_H_ */
