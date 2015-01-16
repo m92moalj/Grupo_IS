@@ -5,7 +5,7 @@ v 1.2:
 	
 	-Fallos conocidos:
 		-Si modificas un paciente, se reinicia su frecuencia.
-		-Si modificas un el nombre/apellido desde 'Buscar contacto por apellido' o 'Visualizar contactos favoritos', se contara como paciente nuevo.
+		-Si modificas un el nombre/apellido desde 'Buscar contacto por apellido' o 'Visualizar contactos favoritos', se contará como paciente nuevo.
 		-Más que fallo, la carencia de poder borrar desde 'Buscar contacto por apellido' y 'Visualizar contactos favoritos'. Pendiente de arreglo.
 		-(Sugerencia) Podría añadirse colores al programa ya que usamos <unistd.h>.
 
