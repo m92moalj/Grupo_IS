@@ -20,7 +20,7 @@ Agenda::Agenda(Interfaz *i) {
 }
 //Función que devuelve la lista de pacientes.
 std::list<Paciente>& Agenda::getPacientes() {
-	return pacientes_;
+	return (pacientes_);
 }
 //Función que asigna la lista de pacientes.
 void Agenda::setPacientes(const std::list<Paciente>& pacientes) {
@@ -35,7 +35,7 @@ list<Paciente> Agenda::buscarApellido(string apellidos) {
 			aux.push_back(*i); //En tal caso, lo introduzco en la lista de pacientes con mismo apellido.
 		}
 	}
-	return aux; //Y al finalizar la función, devolvemos dicha lista.
+	return (aux); //Y al finalizar la función, devolvemos dicha lista.
 }
 //Función que devuelve una lista con los pacientes favoritos. Sigue mismo formato que 'buscarApellido'.
 list<Paciente> Agenda::buscarFavoritos(void){
@@ -46,7 +46,7 @@ list<Paciente> Agenda::buscarFavoritos(void){
 			aux.push_back(*i);
 		}
 	}
-	return aux;
+	return (aux);
 }
 //Función que elimina de la lista de pacientes el cual cuyo apellido coincida con el pasado a la función como parámetro.
 void Agenda::eliminarPaciente(string DNI){
@@ -87,6 +87,7 @@ void Agenda::ordenar(void){
 	setPacientes(auxP); //Guardamos en nuestra lista de pacientes la lista ya ordenada.
 }
 //
+
 void Agenda::guardar(void){
 	db_->guardar(pacientes_);
 }

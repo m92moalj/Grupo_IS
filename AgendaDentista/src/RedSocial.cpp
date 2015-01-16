@@ -19,19 +19,19 @@ RedSocial::RedSocial() {
 }
 
 const std::string& RedSocial::getCuentaFacebook() const {
-	return cuentaFacebook;
+	return (cuentaFacebook_);
 }
 
 void RedSocial::setCuentaFacebook(const std::string& cuentaFacebook) {
-	this->cuentaFacebook = cuentaFacebook;
+	this->cuentaFacebook_ = cuentaFacebook;
 }
 
 const std::string& RedSocial::getCuentaTwitter() const {
-	return cuentaTwitter;
+	return (cuentaTwitter_);
 }
 
 void RedSocial::setCuentaTwitter(const std::string& cuentaTwitter) {
-	this->cuentaTwitter = cuentaTwitter;
+	this->cuentaTwitter_ = cuentaTwitter;
 }
 
 RedSocial::~RedSocial() {

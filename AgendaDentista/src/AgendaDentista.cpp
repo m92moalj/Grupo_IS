@@ -55,21 +55,49 @@ int main() {
 				break;
 			case 2:
 				m.cabecera();
-				cout << "Introduce el apellido del contacto: ";
-				getchar();
-				getline(cin,auxS,'\n');
-				auxL=m.getAgenda()->buscarApellido(auxS);
-				cout << "Lista de pacientes con apellido " << auxS << endl;
-				m.mostrarLista(&auxL,false);
-				m.fusionLista(auxL);
+				if(!m.getAgenda()->getPacientes().empty()){
+					cout << "Introduce el apellido del contacto: ";
+					getchar();
+					getline(cin,auxS,'\n');
+					auxL=m.getAgenda()->buscarApellido(auxS);
+					if(!auxL.empty()){
+						cout << "Lista de pacientes con apellido " << auxS << endl;
+						m.mostrarLista(&auxL,false);
+						m.fusionLista(auxL);
+					}
+					else{
+						m.cabecera();
+						cout << "No existen pacientes con ese apellido, volviendo al menú principal." << endl;
+						sleep(2);
+					}
+				}
+				else{
+					cout << "Agenda vacía, volviendo al menú principal." << endl;
+					sleep(2);
+				}
+
 				break;
 			case 3:
 				m.cabecera();
-				cout << "Lista de favoritos." << endl;
 				m.checkFavoritos();
 				auxL=m.getAgenda()->buscarFavoritos();
-				m.mostrarLista(&auxL,false);
-				m.fusionLista(auxL);
+				if(!(m.getAgenda()->getPacientes().empty())){
+					if(!auxL.empty()){
+						cout << "Lista de favoritos." << endl;
+						m.mostrarLista(&auxL,false);
+						m.fusionLista(auxL);
+					}
+					else{
+						cout << "No hay ningún paciente favorito aún, volviendo al menú principal." << endl;
+						sleep(2);
+					}
+
+				}
+				else{
+					cout << "Agenda vacía, volviendo al menú principal." << endl;
+					sleep(2);
+				}
+
 				break;
 			case 4:
 				m.cabecera();
@@ -84,6 +112,13 @@ int main() {
 				cout << "Agenda guardada." << endl;
 				break;
 			case 6:
+				m.cabecera();
+				cout << "¿Has encontrado un fallo? Infórmanos para que nuestro equipo se encargue de arreglarlo.";
+				fflush(stdout);
+				sleep(3);
+				system("firefox https://github.com/m92moalj/Grupo_IS/issues/new");
+				break;
+			case 7:
 				m.cabecera();
 				cout << endl << "Gracias por usar el programa. Adios." << endl;
 				sleep(2);

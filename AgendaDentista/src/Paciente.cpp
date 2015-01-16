@@ -18,11 +18,11 @@ namespace dentista {
 Paciente::Paciente() {
 	// TODO Auto-generated constructor stub
 	favorito_ = false;
-	frecuencia = 0;
+	frecuencia_ = 0;
 }
 
 const std::string& Paciente::getApellidos() const {
-	return apellidos_;
+	return (apellidos_);
 }
 
 void Paciente::setApellidos(const std::string& apellidos) {
@@ -30,7 +30,7 @@ void Paciente::setApellidos(const std::string& apellidos) {
 }
 
 const Direccion& Paciente::getDireccion() const {
-	return direccion_;
+	return (direccion_);
 }
 
 void Paciente::setDireccion(const Direccion& direccion) {
@@ -38,7 +38,7 @@ void Paciente::setDireccion(const Direccion& direccion) {
 }
 
 const std::string& Paciente::getDni() const {
-	return dni_;
+	return (dni_);
 }
 
 void Paciente::setDni(const std::string& dni) {
@@ -46,7 +46,7 @@ void Paciente::setDni(const std::string& dni) {
 }
 
 const std::string& Paciente::getNombre() const {
-	return nombre_;
+	return (nombre_);
 }
 
 void Paciente::setNombre(const std::string& nombre) {
@@ -54,7 +54,7 @@ void Paciente::setNombre(const std::string& nombre) {
 }
 
 const RedSocial& Paciente::getRedSocial() const {
-	return redSocial_;
+	return (redSocial_);
 }
 
 void Paciente::setRedSocial(const RedSocial& redSocial) {
@@ -62,19 +62,19 @@ void Paciente::setRedSocial(const RedSocial& redSocial) {
 }
 
 const std::string& Paciente::getTelefono() const {
-	return telefono_;
+	return (telefono_);
 }
 
 const std::string& Paciente::getNotas() const {
-	return notas_;
+	return (notas_);
 }
 
 int Paciente::getFrecuencia() const {
-	return frecuencia;
+	return (frecuencia_);
 }
 
 bool Paciente::isFavorito() const {
-	return favorito_;
+	return (favorito_);
 }
 
 void Paciente::setFavorito(bool favorito) {
@@ -82,7 +82,7 @@ void Paciente::setFavorito(bool favorito) {
 }
 
 void Paciente::setFrecuencia(int frecuencia) {
-	this->frecuencia = frecuencia;
+	this->frecuencia_ = frecuencia;
 }
 
 void Paciente::setNotas(const std::string& notas) {
@@ -94,14 +94,14 @@ void Paciente::setTelefono(const std::string& telefono) {
 }
 //Función que devuelve el apellido del paciente seguido de su nombre con el siguiente formato: apellido, nombre.
 string Paciente::getApellidosNombre() {
-	return apellidos_ + ", " + nombre_;
+	return (apellidos_ + ", " + nombre_);
 }
 
 bool Paciente::operator<(Paciente &p) {
 	if (getApellidos().compare(p.getApellidos()) < 0) {
-		return true;
+		return (true);
 	} else {
-		return false;
+		return (false);
 	}
 }
 
@@ -115,5 +115,5 @@ char *stringToChar(string aux1) {
 	int len = aux1.length();
 	char *aux2 = new char[len + 1];
 	strcpy(aux2, aux1.c_str());
-	return aux2;
+	return (aux2);
 }

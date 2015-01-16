@@ -25,7 +25,7 @@ private:
 	Direccion direccion_;
 	std::string notas_;
 	bool favorito_;
-	int frecuencia;
+	int frecuencia_;
 
 public:
 	Paciente();
@@ -45,7 +45,7 @@ public:
 	const std::string& getNotas() const;
 	void setNotas(const std::string& notas);
 	int getFrecuencia() const;
-	void setFrecuencia(int frecuencia);
+	void setFrecuencia(int frecuencia_);
 	bool isFavorito() const;
 	void setFavorito(bool favorito);
 	std::string getApellidosNombre();

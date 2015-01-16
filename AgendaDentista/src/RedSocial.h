@@ -14,8 +14,8 @@ namespace dentista {
 
 class RedSocial {
 private:
-	std::string cuentaFacebook;
-	std::string cuentaTwitter;
+	std::string cuentaFacebook_;
+	std::string cuentaTwitter_;
 
 public:
 	RedSocial();

@@ -12,7 +12,7 @@
 namespace dentista {
 
 const std::string& dentista::Direccion::getCalle() const {
-	return calle_;
+	return (calle_);
 }
 
 void dentista::Direccion::setCalle(const std::string& calle) {
@@ -20,7 +20,7 @@ void dentista::Direccion::setCalle(const std::string& calle) {
 }
 
 const std::string& dentista::Direccion::getEscalera() const {
-	return escalera_;
+	return (escalera_);
 }
 
 void dentista::Direccion::setEscalera(const std::string& escalera) {
@@ -28,7 +28,7 @@ void dentista::Direccion::setEscalera(const std::string& escalera) {
 }
 
 int dentista::Direccion::getNumPiso() const {
-	return numPiso_;
+	return (numPiso_);
 }
 
 void dentista::Direccion::setNumPiso(int numPiso) {
@@ -36,7 +36,7 @@ void dentista::Direccion::setNumPiso(int numPiso) {
 }
 
 const std::string& dentista::Direccion::getNumPortal() const {
-	return numPortal_;
+	return (numPortal_);
 }
 
 void dentista::Direccion::setNumPortal(const std::string& numPortal) {
@@ -44,7 +44,7 @@ void dentista::Direccion::setNumPortal(const std::string& numPortal) {
 }
 
 const std::string& dentista::Direccion::getNumPuerta() const {
-	return numPuerta_;
+	return (numPuerta_);
 }
 
 void dentista::Direccion::setNumPuerta(const std::string& numPuerta) {
@@ -52,7 +52,7 @@ void dentista::Direccion::setNumPuerta(const std::string& numPuerta) {
 }
 
 const std::string& dentista::Direccion::getTipoVia() const {
-	return tipoVia;
+	return (tipoVia);
 }
 
 void dentista::Direccion::setTipoVia(const std::string& tipoVia) {

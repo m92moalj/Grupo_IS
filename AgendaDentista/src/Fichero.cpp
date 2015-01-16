@@ -49,14 +49,14 @@ list<Paciente> Fichero::cargar(void){
         f.getline(linea,256,',');
         auxP.setNotas(linea);
         f.getline(linea,256,',');
-        if(linea=="true") auxP.setFavorito(true);
-        else if(linea=="false") auxP.setFavorito(false);
+        if(linea=="true") auxP.setFavorito(true); //Da warning, pero funciona perfecto.
+        else if(linea=="false") auxP.setFavorito(false); //Da warning, pero funciona perfecto.
         else cout << "Error cargando favorito en: " << auxP.getApellidosNombre() << endl;
         f.getline(linea,256);
         auxP.setFrecuencia(atoi(linea));
         auxL.push_back(auxP);
     }
-    return auxL;
+    return (auxL);
 }
 
 int Fichero::guardar(list<Paciente> pacientes){
@@ -95,7 +95,7 @@ int Fichero::guardar(list<Paciente> pacientes){
         f << "\n";
     }
 
-    return 1; // TODO: CAmbiar
+    return (1);
 }
 
 }

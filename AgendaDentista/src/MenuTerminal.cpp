@@ -41,7 +41,7 @@ void MenuTerminal::cabecera(){
 		cout << "#####             Agenda             #####" << endl;
 		cout << "#####           OranGITops           #####" << endl;
 		cout << "#####                                #####" << endl;
-		cout << "#####                          v 1.2 #####" << endl;
+		cout << "#####                          v 1.3 #####" << endl;
 		cout << "##########################################" << endl;
 		cout << "##########################################" << endl << endl;
 }
@@ -55,7 +55,8 @@ int MenuTerminal::menuPrincipal() {
 	cout << "\t3) Visualizar contactos favoritos. (Se mostrarán todos los pacientes favoritos)" << endl;
 	cout << "\t4) Añadir paciente." << endl;
 	cout << "\t5) Guardar agenda." << endl;
-	cout << "\t6) Salir del programa." << endl << endl;
+	cout << "\t6) Reportar un fallo. " << endl;
+	cout << "\t7) Salir del programa." << endl << endl;
 	cout << "Elija qué opción desea realizar: ";
 	cin >> opcion;
 
@@ -69,7 +70,7 @@ void MenuTerminal::visualizarAgenda() {
 void MenuTerminal::mostrarLista(list<Paciente> *pacientes, bool eliminar) {
 	int j = 1, opcion=0;
 	Paciente aux;
-	list<Paciente>::iterator i,k;
+	list<Paciente>::iterator i;
 	for (i = pacientes->begin(); i != pacientes->end(); ++i) {
 		cout << "Paciente " << j << ": " << (*i).getApellidosNombre() << endl;
 		j++;
@@ -97,8 +98,7 @@ void MenuTerminal::mostrarLista(list<Paciente> *pacientes, bool eliminar) {
 			cout << "Opciones disponibles:" << endl;
 			cout << "\t1) Modificar paciente." << endl;
 			if(eliminar) cout << "\t2) Eliminar paciente." << endl;
-			cout << "\tCualquier otro numero para volver al menú principal."
-					<< endl;
+			cout << "\tCualquier otro numero para volver al menú principal." << endl;
 			cout << "Elija una opción: ";
 			cin >> opcion;
 			switch (opcion) {
@@ -108,11 +108,6 @@ void MenuTerminal::mostrarLista(list<Paciente> *pacientes, bool eliminar) {
 					(*i).setFrecuencia(aux.getFrecuencia());
 					break;
 				case 2:
-					/*for (k = a_->getPacientes().begin(); k != a_->getPacientes().end() ; ++k) {
-						if (!((*i).getApellidosNombre().compare((*k).getApellidosNombre()))) {
-							a_->getPacientes().erase(k);
-						}
-					}*/
 					if(eliminar) pacientes->erase(i);
 					else{
 						cout << "volviendo al menú principal.";
