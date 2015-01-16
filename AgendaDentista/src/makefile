@@ -26,4 +26,4 @@ RedSocial.o : RedSocial.cpp RedSocial.h
 	gcc -c RedSocial.cpp
 
 clean :
-	rm *.o
+	rm *.o AgendaDentistaEJECUTABLE

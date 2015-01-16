@@ -1,10 +1,10 @@
 v 1.2:
 	-Fallos arreglados:
 		-Ahora, solo se muestra la opción de borrar paciente cuando lo seleccionamos desde 'Visualizar Agenda', evitando el fallo que no eliminaba pacientes.
+		-Si modificamos un paciente, se conserva su frecuencia siempre.
 		-Las transiciones dentro del programa son más fluidas.
 	
 	-Fallos conocidos:
-		-Si modificas un paciente, se reinicia su frecuencia.
 		-Si modificas un el nombre/apellido desde 'Buscar contacto por apellido' o 'Visualizar contactos favoritos', se contara como paciente nuevo.
 		-Más que fallo, la carencia de poder borrar desde 'Buscar contacto por apellido' y 'Visualizar contactos favoritos'. Pendiente de arreglo.
 		-(Sugerencia) Podría añadirse colores al programa ya que usamos <unistd.h>.

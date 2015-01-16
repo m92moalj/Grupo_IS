@@ -97,13 +97,15 @@ void MenuTerminal::mostrarLista(list<Paciente> *pacientes, bool eliminar) {
 			cout << "Opciones disponibles:" << endl;
 			cout << "\t1) Modificar paciente." << endl;
 			if(eliminar) cout << "\t2) Eliminar paciente." << endl;
-			cout << "\tCualquier otro numero para volver al menu principal."
+			cout << "\tCualquier otro numero para volver al menú principal."
 					<< endl;
 			cout << "Elija una opción: ";
 			cin >> opcion;
 			switch (opcion) {
 				case 1:
+					aux.setFrecuencia((*i).getFrecuencia());
 					*i = rellenaPaciente();
+					(*i).setFrecuencia(aux.getFrecuencia());
 					break;
 				case 2:
 					/*for (k = a_->getPacientes().begin(); k != a_->getPacientes().end() ; ++k) {
