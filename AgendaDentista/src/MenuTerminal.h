@@ -24,9 +24,9 @@ public:
 	void visualizarPaciente(Paciente p);
 	void visualizarAgenda();
 	void llamarPaciente(Paciente *p);
-	Agenda* getAgenda(void){return a_;};
+	Agenda* getAgenda(void){return (a_);};
 	void setAgenda(Agenda* a){a_=a;};
-	void mostrarLista(std::list<Paciente> *pacientes);
+	void mostrarLista(std::list<Paciente> *pacientes, bool eliminar="true");
 	Paciente rellenaPaciente();
 	void checkFavoritos(void);
 	void fusionLista(std::list<Paciente> aux);

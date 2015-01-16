@@ -22,14 +22,15 @@ using namespace std;
 namespace dentista {
 
 MenuTerminal::MenuTerminal(Agenda *a) {
-	// TODO Auto-generated constructor stub
 	a_ = a;
+	// Añadiendo las dos próximas líneas, cargamos en la agenda del programa los pacientes que hay en nuestro fichero externo
+	// y ordenamos la lista (Por si se hubiera manipulado la lista manualmente). Así aumentamos drásticamente la comodidad
+	// del encargado de la Agenda, ya que siempre que abra el programa, tendrá su lista cargada y ordenada correctamente.
 	a_->cargar();
 	a_->ordenar();
 }
 
 MenuTerminal::~MenuTerminal() {
-	// TODO Auto-generated destructor stub
 }
 
 void MenuTerminal::cabecera(){
@@ -40,7 +41,7 @@ void MenuTerminal::cabecera(){
 		cout << "#####             Agenda             #####" << endl;
 		cout << "#####           OranGITops           #####" << endl;
 		cout << "#####                                #####" << endl;
-		cout << "#####                          v 1.1 #####" << endl;
+		cout << "#####                          v 1.2 #####" << endl;
 		cout << "##########################################" << endl;
 		cout << "##########################################" << endl << endl;
 }
@@ -58,14 +59,14 @@ int MenuTerminal::menuPrincipal() {
 	cout << "Elija qué opción desea realizar: ";
 	cin >> opcion;
 
-	return opcion;
+	return (opcion);
 }
 
 void MenuTerminal::visualizarAgenda() {
 	mostrarLista(&(a_->getPacientes()));
 }
 
-void MenuTerminal::mostrarLista(list<Paciente> *pacientes) {
+void MenuTerminal::mostrarLista(list<Paciente> *pacientes, bool eliminar) {
 	int j = 1, opcion=0;
 	Paciente aux;
 	list<Paciente>::iterator i,k;
@@ -95,7 +96,7 @@ void MenuTerminal::mostrarLista(list<Paciente> *pacientes) {
 			*i = aux;
 			cout << "Opciones disponibles:" << endl;
 			cout << "\t1) Modificar paciente." << endl;
-			cout << "\t2) Eliminar paciente." << endl;
+			if(eliminar) cout << "\t2) Eliminar paciente." << endl;
 			cout << "\tCualquier otro numero para volver al menu principal."
 					<< endl;
 			cout << "Elija una opción: ";
@@ -110,8 +111,15 @@ void MenuTerminal::mostrarLista(list<Paciente> *pacientes) {
 							a_->getPacientes().erase(k);
 						}
 					}*/
-					pacientes->erase(i);
+					if(eliminar) pacientes->erase(i);
+					else{
+						cout << "volviendo al menú principal.";
+						sleep(2);
+					}
 					break;
+				default:
+					cout << "volviendo al menú principal.";
+					sleep(2);
 				}
 		}
 	}
@@ -187,7 +195,7 @@ Paciente MenuTerminal::rellenaPaciente() {
 	getline(cin, auxS, '\n');
 	auxP.setNotas(auxS);
 
-	return auxP;
+	return (auxP);
 }
 //Función que transforma a favorito cualquier paciente con frecuencia superior a 10.
 void MenuTerminal::checkFavoritos(void) {

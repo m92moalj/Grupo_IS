@@ -27,6 +27,17 @@ int main() {
 	list<Paciente> auxL;
 	list<Paciente>::iterator i;
 	bool salir=false;
+	// Ahora declaramos un puntero a Fichero, apuntando a Fichero("almacen.txt") que necesitamos para la declaración
+	// del puntero a Agenda apuntando a Agenda(f), ya que Agenda necesita como parámetro un dato tipo *Fichero, que servirá
+	// para la implementación de la base de datos de la agenda siguiendo los principios SOLID.
+	// Una vez que tenemos nuestro puntero a Agenda, podemos declarar nuestro dato tipo MenuTerminal, el cual recibe como
+	// parámetro el puntero a Agenda(f), por lo que al terminar de declarar m(a), ya hemos declarado un dato MenuTerminal
+	// que tiene asociada la agenda recibida, la cual tenia asignado un fichero, llamado 'almacen.txt'. Así mismo, al incluir
+	// en el constructor de MenuTerminal las siguientes líneas:
+	// 		a_->cargar();
+	//		a_->ordenar();
+	// cuando declaramos m(a) conseguiremos que automáticamente se cargue en la agenda de nuestro programa todos los datos
+	// que había en 'almacen.txt' en la lista interna de pacientes y que se ordenen alfabéticamente.
 	Fichero* f = new Fichero("almacen.txt");
 	Agenda* a = new Agenda(f);
 	MenuTerminal m(a); //El programa carga por defecto la base de datos de contactos y la guarda al finalizar el programa.
@@ -49,7 +60,7 @@ int main() {
 				getline(cin,auxS,'\n');
 				auxL=m.getAgenda()->buscarApellido(auxS);
 				cout << "Lista de pacientes con apellido " << auxS << endl;
-				m.mostrarLista(&auxL);
+				m.mostrarLista(&auxL,false);
 				m.fusionLista(auxL);
 				break;
 			case 3:
@@ -57,7 +68,7 @@ int main() {
 				cout << "Lista de favoritos." << endl;
 				m.checkFavoritos();
 				auxL=m.getAgenda()->buscarFavoritos();
-				m.mostrarLista(&auxL);
+				m.mostrarLista(&auxL,false);
 				m.fusionLista(auxL);
 				break;
 			case 4:
@@ -85,5 +96,5 @@ int main() {
 		}
 	}while(!salir);
 
-	return 0;
+	return (0);
 }
