@@ -62,8 +62,8 @@ int main() {
 					auxL=m.getAgenda()->buscarApellido(auxS);
 					if(!auxL.empty()){
 						cout << "Lista de pacientes con apellido " << auxS << endl;
-						m.mostrarLista(&auxL,false);
-						m.fusionLista(auxL);
+						m.mostrarLista(&auxL);
+						//m.fusionLista(auxL);
 					}
 					else{
 						m.cabecera();
@@ -84,8 +84,8 @@ int main() {
 				if(!(m.getAgenda()->getPacientes().empty())){
 					if(!auxL.empty()){
 						cout << "Lista de favoritos." << endl;
-						m.mostrarLista(&auxL,false);
-						m.fusionLista(auxL);
+						m.mostrarLista(&auxL);
+						//m.fusionLista(auxL);
 					}
 					else{
 						cout << "No hay ningún paciente favorito aún, volviendo al menú principal." << endl;

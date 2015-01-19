@@ -67,7 +67,7 @@ void MenuTerminal::visualizarAgenda() {
 	mostrarLista(&(a_->getPacientes()));
 }
 
-void MenuTerminal::mostrarLista(list<Paciente> *pacientes, bool eliminar) {
+void MenuTerminal::mostrarLista(list<Paciente> *pacientes) {
 	int j = 1, opcion=0;
 	Paciente aux;
 	list<Paciente>::iterator i;
@@ -95,24 +95,26 @@ void MenuTerminal::mostrarLista(list<Paciente> *pacientes, bool eliminar) {
 			aux = *i;
 			llamarPaciente(&aux);
 			*i = aux;
+			//Las siguientes 3 sentencias son necesáreas para que se actualice la frecuencia siempre.
+			getAgenda()->eliminarPaciente(aux.getDni());
+			getAgenda()->insertarPaciente(aux);
+			getAgenda()->ordenar();
 			cout << "Opciones disponibles:" << endl;
 			cout << "\t1) Modificar paciente." << endl;
-			if(eliminar) cout << "\t2) Eliminar paciente." << endl;
+			cout << "\t2) Eliminar paciente." << endl;
 			cout << "\tCualquier otro numero para volver al menú principal." << endl;
 			cout << "Elija una opción: ";
 			cin >> opcion;
 			switch (opcion) {
 				case 1:
-					aux.setFrecuencia((*i).getFrecuencia());
-					*i = rellenaPaciente();
-					(*i).setFrecuencia(aux.getFrecuencia());
+					getAgenda()->eliminarPaciente(aux.getDni()); //Eliminamos el paciente.
+					aux = rellenaPaciente(); //Le metemos la nueva información a un paciente auxiliar.
+					aux.setFrecuencia((*i).getFrecuencia()); //Y restauramos su frecuencia.
+					getAgenda()->insertarPaciente(aux); //Después, lo introducios en la lista.
+					getAgenda()->ordenar(); //Y ordenamos nuestros pacientes para que cuadre.
 					break;
 				case 2:
-					if(eliminar) pacientes->erase(i);
-					else{
-						cout << "volviendo al menú principal.";
-						sleep(2);
-					}
+					getAgenda()->eliminarPaciente(aux.getDni());
 					break;
 				default:
 					cout << "volviendo al menú principal.";
