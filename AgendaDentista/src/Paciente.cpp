@@ -21,11 +21,11 @@ Paciente::Paciente() {
 	frecuencia_ = 0;
 }
 
-const std::string& Paciente::getApellidos() const {
+const string& Paciente::getApellidos() const {
 	return (apellidos_);
 }
 
-void Paciente::setApellidos(const std::string& apellidos) {
+void Paciente::setApellidos(const string& apellidos) {
 	apellidos_ = apellidos;
 }
 
@@ -37,19 +37,19 @@ void Paciente::setDireccion(const Direccion& direccion) {
 	direccion_ = direccion;
 }
 
-const std::string& Paciente::getDni() const {
+const string& Paciente::getDni() const {
 	return (dni_);
 }
 
-void Paciente::setDni(const std::string& dni) {
+void Paciente::setDni(const string& dni) {
 	dni_ = dni;
 }
 
-const std::string& Paciente::getNombre() const {
+const string& Paciente::getNombre() const {
 	return (nombre_);
 }
 
-void Paciente::setNombre(const std::string& nombre) {
+void Paciente::setNombre(const string& nombre) {
 	nombre_ = nombre;
 }
 
@@ -61,11 +61,11 @@ void Paciente::setRedSocial(const RedSocial& redSocial) {
 	redSocial_ = redSocial;
 }
 
-const std::string& Paciente::getTelefono() const {
+const string& Paciente::getTelefono() const {
 	return (telefono_);
 }
 
-const std::string& Paciente::getNotas() const {
+const string& Paciente::getNotas() const {
 	return (notas_);
 }
 
@@ -85,11 +85,11 @@ void Paciente::setFrecuencia(int frecuencia) {
 	this->frecuencia_ = frecuencia;
 }
 
-void Paciente::setNotas(const std::string& notas) {
+void Paciente::setNotas(const string& notas) {
 	notas_ = notas;
 }
 
-void Paciente::setTelefono(const std::string& telefono) {
+void Paciente::setTelefono(const string& telefono) {
 	telefono_ = telefono;
 }
 //Función que devuelve el apellido del paciente seguido de su nombre con el siguiente formato: apellido, nombre.

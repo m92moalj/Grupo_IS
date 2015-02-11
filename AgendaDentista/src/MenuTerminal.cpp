@@ -41,7 +41,7 @@ void MenuTerminal::cabecera(){
 		cout << "#####             Agenda             #####" << endl;
 		cout << "#####           OranGITops           #####" << endl;
 		cout << "#####                                #####" << endl;
-		cout << "#####                          v 1.3 #####" << endl;
+		cout << "#####                          v 1.4 #####" << endl;
 		cout << "##########################################" << endl;
 		cout << "##########################################" << endl << endl;
 }
@@ -220,4 +220,3 @@ void MenuTerminal::fusionLista(list<Paciente> aux) {
 }
 
 } /* namespace dentista */
-
